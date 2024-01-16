@@ -27,7 +27,8 @@ return {
     "neovim/nvim-lspconfig",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "gI", "<Cmd>lua Handlers.implementation()<CR>" }
+      keys[#keys + 1] = { "gI", false }
+      keys[#keys + 1] = { "gi", "<cmd>lua Handlers.implementation()<CR>" }
     end,
   },
 }

@@ -8,11 +8,9 @@ return {
       servers = {
         helm_ls = {
           opts = {
-            filetypes = { "helm" },
-            cmd = { "helm_ls", "serve" },
-            root_dir = function(fname)
-              return util.root_pattern("Chart.yaml")(fname)
-            end,
+            yamlls = {
+              path = "yaml-language-server",
+            },
           },
         },
         tilt_ls = {
